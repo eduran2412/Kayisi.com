@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/temp/main.xhtml"> 
+
+    <ui:define name="content">
+        <h:form class="mt-3">
+            <div class="form-group">
+                <label >Kullanıcı Adı</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.kullaniciAdi}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Şifre</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.sifre}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Ad</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.ad}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Soyad</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.soyad}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Cinsiyet</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.cinsiyet}"/>
+            </div>
+            <div class="form-group">
+                <label>Telefon No(Başında "0" Olmadan Giriniz.)</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.telNo}"/>
+            </div>
+
+            <div class="form-group">
+                <label>Sektör(Gıda, Giyim, Hizmet, İnşaat, Sağlık, Turizm)</label>
+                <h:inputText styleClass="form-control" value="#{isciBean.entity.sektor}"/>
+            </div>
+
+
+            <h:commandButton styleClass="btn btn-primary" action="#{isciBean.Kaydet()}" value="BAŞVUR"/>
+        </h:form>
+        <div class="mb-3"></div>
+    </ui:define>
+    </ui:composition>

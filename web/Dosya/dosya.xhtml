@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/temp/main.xhtml"> 
+
+    <ui:define name="content">
+ 
+        <h:form enctype="multipart/form-data">
+            <div class="form-group">
+                <label>file</label>
+                <h:inputFile value="#{dosyaBean.doc}" styleClass="custom-file" />
+            </div>
+            <h:commandButton action="#{dosyaBean.upload}" styleClass="btn btn-primary" value="upload"/>
+        </h:form>
+        <hr/>
+        <h:dataTable styleClass="table" value="#{dosyaBean.dosyaList}" var="d">
+           <h:column>
+                <f:facet name="header">id</f:facet>
+                #{d.id}
+            </h:column>
+            
+            <h:column>
+                <f:facet name="header">path</f:facet>
+                #{d.filePath}
+            </h:column>
+            <h:column>
+                <f:facet name="header">name</f:facet>
+                #{d.fileName}
+            </h:column>
+            <h:column>
+                <f:facet name="header">type</f:facet>
+                #{d.fileType}
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+    </ui:composition>
