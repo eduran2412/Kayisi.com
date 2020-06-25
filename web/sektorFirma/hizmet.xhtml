@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="/temp/main.xhtml"> 
+
+    <ui:define name="content">
+            
+            <h:form>
+                 <pre>page #{firmaBean.page} of #{firmaBean.pageCount}</pre>
+                <div class="btn-group">
+                    <h:commandButton action="#{firmaBean.previous()}" value="Previous" styleClass="btn btn-outline-dark "/>
+                    <h:commandButton action="#{firmaBean.next()}" value="next" styleClass="btn btn-outline-dark "/>
+                </div>
+                <h:dataTable styleClass="table table-hover table-striped mt-3" value="#{firmaBean.readHizmet}" var="i">
+                   <h:column>
+                        <f:facet name="header">Şirket Adı</f:facet>
+                            #{i.sirketAdi}
+                    </h:column>
+                    
+                    <h:column>
+                        <f:facet name="header">Firma No</f:facet>
+                            #{i.telNo}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Sektör</f:facet>
+                            #{i.sektor}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Eleman Sayısı</f:facet>
+                            #{i.elemanSayisi}
+                    </h:column>
+
+                    <h:column>
+                        <f:facet name="header">Cinsiyet</f:facet>
+                            #{i.cinsiyet}
+                    </h:column>
+                </h:dataTable>
+            </h:form>
+    </ui:define>
+</ui:composition>
